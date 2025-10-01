@@ -16,7 +16,7 @@
     /* Hero Section */
     header{
       min-height:90vh;
-      background:url("https://i.postimg.cc/3Nj6dzrn/1000125288.jpg") center/cover no-repeat fixed; /* Fixed background */
+      background:url("https://i.postimg.cc/3Nj6dzrn/1000125288.jpg") center/cover no-repeat fixed;
       display:flex;justify-content:center;align-items:flex-start;
       text-align:center;position:relative;padding:50px 20px 0;
     }
@@ -92,7 +92,7 @@
       gap:20px;
       justify-items:center;
     }
-    .feature{
+    .feature, .girl-card{
       background:rgba(255,0,51,0.15);
       border:1px solid rgba(255,0,51,0.3);
       border-radius:16px;
@@ -104,39 +104,19 @@
       transition:all 0.3s;
       backdrop-filter:blur(5px);
       position:relative;
+      flex-shrink:0;
     }
     .feature span{
       font-size:28px;display:block;margin-bottom:10px;
       color:#ff3366;
     }
-    .feature:hover{
+    .feature:hover, .girl-card:hover{
       transform:scale(1.05);
       box-shadow:0 8px 25px rgba(255,0,51,0.5);
     }
-
-    /* Live Models Horizontal Scroll */
-    .live-girls{
-      display:flex;
-      gap:20px;
-      overflow-x:auto;
-      padding:15px 0;
-      scrollbar-width:none; /* Firefox */
-    }
-    .live-girls::-webkit-scrollbar{display:none;} /* Chrome/Safari */
-    .girl-card{
-      flex:0 0 180px;
-      background:rgba(255,0,51,0.15);
-      border:1px solid rgba(255,0,51,0.3);
-      border-radius:16px;
-      text-align:center;
-      overflow:hidden;
-      backdrop-filter:blur(5px);
-      transition:all 0.3s;
-      position:relative;
-    }
     .girl-card img{
       width:100%;
-      height:200px;
+      height:400px;
       object-fit:cover;
       border-radius:12px;
     }
@@ -146,17 +126,35 @@
       font-size:14px;
       color:#fff;
     }
-    .girl-card:hover{
-      transform:scale(1.05);
-      box-shadow:0 8px 25px rgba(255,0,51,0.5);
+.live-badge{
+  position:absolute;
+  top:10px; left:20px;
+  background:#ff0033;
+  padding:0px 0;      /* reduce horizontal padding if using width */
+  width:30px;         /* set your desired width */
+  border-radius:15px;
+  font-size:12px;
+  font-weight:bold;
+  text-align:center;  /* center the text inside */
+}
+    /* Horizontal Scroll for Live Models */
+    .live-girls{
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      padding-bottom:20px;
+      scroll-behavior:smooth;
+      -webkit-overflow-scrolling: touch; /* smooth swipe on mobile */
     }
-    .live-badge{
-      position:absolute;
-      top:10px;left:10px;
-      background:#ff0033;
-      padding:4px 10px;
-      border-radius:8px;
-      font-size:12px;font-weight:bold;
+    .live-girls::-webkit-scrollbar{
+      height:8px;
+    }
+    .live-girls::-webkit-scrollbar-thumb{
+      background:rgba(255,0,51,0.5);
+      border-radius:4px;
+    }
+    .live-girls::-webkit-scrollbar-track{
+      background-position-y: ;d:rgba(255,255,255,0.05);
     }
 
     /* Floating CTA with pulse */
@@ -215,7 +213,7 @@
         </div>
       </div>
 
-      <!-- Live Models Horizontal Scroll -->
+      <!-- Live Models -->
       <div class="card-container">
         <h2 style="text-align:center;margin-bottom:30px;">🔥 Models Live Now</h2>
         <div class="live-girls">
@@ -238,11 +236,6 @@
             <span class="live-badge">Live</span>
             <img src="https://i.postimg.cc/Wbk7XXh9/489bb4777a83ba478f96121110afbbf5.jpg" alt="Nidhi">
             <span>Nidhi, 20</span>
-          </div>
-          <div class="girl-card">
-            <span class="live-badge">Live</span>
-            <img src="https://i.postimg.cc/pL5JckrG/images.jpg" alt="Ananya">
-            <span>Ananya, 21</span>
           </div>
         </div>
       </div>
