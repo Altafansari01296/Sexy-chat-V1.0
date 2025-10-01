@@ -82,13 +82,13 @@
     /* Features & Live Models Card */
     .card-container{
       max-width:1100px;
-      margin:0 auto 60px;
+      margin:0 auto 40px;
       position:relative;
       z-index:2;
     }
     .features{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      grid-template-columns:repeat(2, 1fr); /* 2x2 grid */
       gap:20px;
       justify-items:center;
     }
@@ -105,6 +105,12 @@
       backdrop-filter:blur(5px);
       position:relative;
       flex-shrink:0;
+
+      /* Make all feature cards same height */
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:180px; /* adjust as needed */
     }
     .feature span{
       font-size:28px;display:block;margin-bottom:10px;
@@ -130,53 +136,54 @@
   position:absolute;
   top:10px; left:20px;
   background:#ff0033;
-  padding:0px 0;      /* reduce horizontal padding if using width */
-  width:30px;         /* set your desired width */
+  padding:0px 0;
+  width:30px;
   border-radius:15px;
   font-size:12px;
   font-weight:bold;
-  text-align:center;  /* center the text inside */
+  text-align:center;
 }
-    /* Horizontal Scroll for Live Models */
-    .live-girls{
-      display:flex;
-      gap:20px;
-      overflow-x:auto;
-      padding-bottom:20px;
-      scroll-behavior:smooth;
-      -webkit-overflow-scrolling: touch; /* smooth swipe on mobile */
-    }
-    .live-girls::-webkit-scrollbar{
-      height:8px;
-    }
-    .live-girls::-webkit-scrollbar-thumb{
-      background:rgba(255,0,51,0.5);
-      border-radius:4px;
-    }
-    .live-girls::-webkit-scrollbar-track{
-      background-position-y: ;d:rgba(255,255,255,0.05);
-    }
 
-    /* Floating CTA with pulse */
-    @keyframes pulse{
-      0%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
-      50%{box-shadow:0 0 25px rgba(255,0,51,0.7);}
-      100%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
-    }
-    .floating-btn{
-      position:fixed;bottom:20px;right:20px;
-      background:linear-gradient(45deg,#ff0033,#b30024);
-      color:#fff;padding:15px 25px;
-      border-radius:50px;text-decoration:none;
-      font-weight:bold;font-size:14px;
-      animation:pulse 2s infinite;
-      z-index:100;
-    }
+/* Horizontal Scroll for Live Models */
+.live-girls{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding-bottom:20px;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling: touch; /* smooth swipe on mobile */
+}
+.live-girls::-webkit-scrollbar{
+  height:8px;
+}
+.live-girls::-webkit-scrollbar-thumb{
+  background:rgba(255,0,51,0.5);
+  border-radius:4px;
+}
+.live-girls::-webkit-scrollbar-track{
+  background:rgba(255,255,255,0.05);
+}
 
-    footer{
-      text-align:center;font-size:12px;padding:20px;
-      color:#aaa;border-top:1px solid #222;margin-top:40px;
-    }
+/* Floating CTA with pulse */
+@keyframes pulse{
+  0%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
+  50%{box-shadow:0 0 25px rgba(255,0,51,0.7);}
+  100%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
+}
+.floating-btn{
+  position:fixed;bottom:20px;right:20px;
+  background:linear-gradient(45deg,#ff0033,#b30024);
+  color:#fff;padding:15px 25px;
+  border-radius:50px;text-decoration:none;
+  font-weight:bold;font-size:14px;
+  animation:pulse 2s infinite;
+  z-index:100;
+}
+
+footer{
+  text-align:center;font-size:12px;padding:20px;
+  color:#aaa;border-top:1px solid #222;margin-top:40px;
+}
 
   </style>
 </head>
