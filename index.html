@@ -11,188 +11,204 @@
       background:#0a0a0a;
       color:#fff;
       overflow-x:hidden;
+      overflow-y:auto;
     }
 
     /* Hero Section */
     header{
-      min-height:90vh;
+      width:100%;
       background:url("https://i.postimg.cc/3Nj6dzrn/1000125288.jpg") center/cover no-repeat fixed;
-      display:flex;justify-content:center;align-items:flex-start;
-      text-align:center;position:relative;padding:50px 20px 0;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      text-align:center;
+      position:relative;
+      padding:40px 0 0;
     }
     header::after{
       content:"";position:absolute;top:0;left:0;width:100%;height:100%;
       background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.85));
       z-index:1;
     }
-    .hero-content{position:relative;z-index:2;max-width:650px;}
-    header h1{
-      font-size:50px;margin-bottom:15px;
-      color:#ff3366;text-shadow:0 0 15px #ff0033;
-    }
-    header p{
-      font-size:20px;margin-bottom:25px;
-      color:#ffb3c1;
+    .hero-content{
+      position: relative;
+      z-index: 2;
+      max-width: 1100px; 
+      margin: 0 auto;
+      padding: 0 15px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
 
-    /* Top Stats */
+    h1{
+      font-size:42px;margin-bottom:12px;
+      color:#ff3366;text-shadow:0 0 12px #ff0033;
+      z-index:2;
+    }
+    p{
+      font-size:18px;margin-bottom:20px;
+      color:#ffb3c1;
+      z-index:2;
+    }
+
     .top-stats{
-      display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:25px;
+      display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;
     }
     .top-stats span{
       background:rgba(255,255,255,0.08);
       border:1px solid rgba(255,0,51,0.4);
-      padding:6px 14px;border-radius:25px;
-      font-size:14px;color:#fff;
+      padding:5px 12px;border-radius:22px;
+      font-size:13px;color:#fff;
       transition:transform 0.3s;
     }
-    .top-stats span:hover{transform:scale(1.1);}
+    .top-stats span:hover{transform:scale(1.05);}
 
-    /* Hero CTA */
+    /* Username input & button */
     .hero-actions{
-      display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;
+      display:flex;
+      flex-direction:column; /* vertical stack */
+      gap:14px;
+      justify-content:center;
+      align-items:center;
+      margin-bottom:25px;
     }
     .hero-input{
-      padding:12px 18px;
+      padding:14px 18px;
       border:none;
       border-radius:30px;
       outline:none;
-      flex:1;
-      min-width:180px;
+      width:320px; 
+      max-width:90%; 
       font-size:16px;
     }
     .cta-btn{
       background:linear-gradient(45deg,#ff0033,#b30024);
-      color:#fff;padding:12px 30px;
-      border-radius:40px;text-decoration:none;
-      font-weight:bold;font-size:16px;
-      transition:.3s;box-shadow:0 5px 20px rgba(255,0,51,.5);
-      position:relative;
-      overflow:hidden;
+      color:#fff;padding:14px 30px; /* slightly bigger */
+      border-radius:35px;text-decoration:none;
+      font-weight:bold;font-size:16px; /* bigger text */
+      transition:.3s;box-shadow:0 6px 20px rgba(255,0,51,.6);
       display:inline-block;
+      position:relative;
     }
     .cta-btn::after{
-      content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+      content:"";top:-50%;left:-50%;width:200%;height:200%;
       background:radial-gradient(circle,#ff0033,transparent);
       opacity:0;transition:.3s;pointer-events:none;
+      position:absolute;
     }
     .cta-btn:hover::after{opacity:0.3;}
-    .cta-btn:hover{transform:scale(1.08);}
+    .cta-btn:hover{transform:scale(1.05);}
 
-    /* Features & Live Models Card */
     .card-container{
       max-width:1100px;
-      margin:0 auto 40px;
-      position:relative;
-      z-index:2;
+      margin:0 auto 35px;
+      padding:0 15px;
     }
+
     .features{
       display:grid;
-      grid-template-columns:repeat(2, 1fr); /* 2x2 grid */
-      gap:20px;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
       justify-items:center;
     }
     .feature, .girl-card{
       background:rgba(255,0,51,0.15);
       border:1px solid rgba(255,0,51,0.3);
-      border-radius:16px;
-      padding:25px;
+      border-radius:14px;
+      padding:20px;
       text-align:center;
       color:#fff;
-      font-size:16px;
+      font-size:14px;
       width:100%;
       transition:all 0.3s;
-      backdrop-filter:blur(5px);
-      position:relative;
+      backdrop-filter:blur(4px);
       flex-shrink:0;
-
-      /* Make all feature cards same height */
       display:flex;
       flex-direction:column;
       justify-content:center;
-      min-height:180px; /* adjust as needed */
+      position:relative;
+    }
+    .features .feature{
+      min-height:160px;
     }
     .feature span{
-      font-size:28px;display:block;margin-bottom:10px;
+      font-size:24px;display:block;margin-bottom:8px;
       color:#ff3366;
     }
-    .feature:hover, .girl-card:hover{
-      transform:scale(1.05);
-      box-shadow:0 8px 25px rgba(255,0,51,0.5);
-    }
+
     .girl-card img{
       width:100%;
-      height:400px;
+      height:350px;
       object-fit:cover;
-      border-radius:12px;
+      border-radius:10px;
     }
     .girl-card span{
       display:block;
-      padding:10px 0 0 0;
-      font-size:14px;
+      padding:8px 0 0 0;
+      font-size:13px;
       color:#fff;
     }
-.live-badge{
-  position:absolute;
-  top:10px; left:20px;
-  background:#ff0033;
-  padding:0px 0;
-  width:30px;
-  border-radius:15px;
-  font-size:12px;
-  font-weight:bold;
-  text-align:center;
-}
+    .live-badge{
+      position:absolute;
+      top:8px; left:15px;
+      background:#ff0033;
+      padding:0px 0;
+      width:28px;
+      border-radius:14px;
+      font-size:11px;
+      font-weight:bold;
+      text-align:center;
+    }
 
-/* Horizontal Scroll for Live Models */
-.live-girls{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  padding-bottom:20px;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling: touch; /* smooth swipe on mobile */
-}
-.live-girls::-webkit-scrollbar{
-  height:8px;
-}
-.live-girls::-webkit-scrollbar-thumb{
-  background:rgba(255,0,51,0.5);
-  border-radius:4px;
-}
-.live-girls::-webkit-scrollbar-track{
-  background:rgba(255,255,255,0.05);
-}
+    .live-girls{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding-bottom:18px;
+      scroll-behavior:smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .live-girls::-webkit-scrollbar{
+      height:7px;
+    }
+    .live-girls::-webkit-scrollbar-thumb{
+      background:rgba(255,0,51,0.5);
+      border-radius:4px;
+    }
+    .live-girls::-webkit-scrollbar-track{
+      background:rgba(255,255,255,0.05);
+    }
 
-/* Floating CTA with pulse */
-@keyframes pulse{
-  0%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
-  50%{box-shadow:0 0 25px rgba(255,0,51,0.7);}
-  100%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
-}
-.floating-btn{
-  position:fixed;bottom:20px;right:20px;
-  background:linear-gradient(45deg,#ff0033,#b30024);
-  color:#fff;padding:15px 25px;
-  border-radius:50px;text-decoration:none;
-  font-weight:bold;font-size:14px;
-  animation:pulse 2s infinite;
-  z-index:100;
-}
+    .floating-btn{
+      position:fixed;bottom:18px;right:18px;
+      background:linear-gradient(45deg,#ff0033,#b30024);
+      color:#fff;padding:12px 22px;
+      border-radius:50px;text-decoration:none;
+      font-weight:bold;font-size:13px;
+      animation:pulse 2s infinite;
+      z-index:100;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
+      50%{box-shadow:0 0 25px rgba(255,0,51,0.7);}
+      100%{box-shadow:0 0 10px rgba(255,0,51,0.5);}
+    }
 
-footer{
-  text-align:center;font-size:12px;padding:20px;
-  color:#aaa;border-top:1px solid #222;margin-top:40px;
-}
-
+    footer{
+      text-align:center;font-size:12px;padding:20px;
+      color:#aaa;border-top:1px solid #222;margin-top:40px;
+    }
   </style>
 </head>
 <body>
-  
-  <!-- Hero Section -->
   <header>
     <div class="hero-content">
-      <!-- Top Stats -->
+      <!-- Main Title at the top -->
+      <h1>SexyChat</h1>
+      <p>Live. Hot. Private. Premium.</p>
+
+      <!-- Rest of content below -->
       <div class="top-stats">
         <span>💃 500+ Models Online</span>
         <span>⏰ 24/7 Live</span>
@@ -200,18 +216,13 @@ footer{
         <span>⭐ 50K+ Users</span>
       </div>
 
-      <h1>SexyChat</h1>
-      <p>Live. Hot. Private. Premium.</p>
-
-      <!-- CTA + Form -->
       <div class="hero-actions">
-        <input type="text" placeholder="Enter Username..." class="hero-input">
+        <input type="text" placeholder="Enter Your Name..." class="hero-input">
         <a href="#" class="cta-btn">🔥 Start Free Chat</a>
       </div>
 
-      <!-- Premium Features -->
       <div class="card-container">
-        <h2 style="text-align:center;margin-bottom:30px;">✨ Premium Features</h2>
+        <h2 style="text-align:center;margin-bottom:25px;">✨ Premium Features</h2>
         <div class="features">
           <div class="feature"><span>🔒</span>Secure & Private</div>
           <div class="feature"><span>🎁</span>Free Trial for 100 Users</div>
@@ -220,9 +231,8 @@ footer{
         </div>
       </div>
 
-      <!-- Live Models -->
       <div class="card-container">
-        <h2 style="text-align:center;margin-bottom:30px;">🔥 Models Live Now</h2>
+        <h2 style="text-align:center;margin-bottom:25px;">🔥 Models Live Now</h2>
         <div class="live-girls">
           <div class="girl-card">
             <span class="live-badge">Live</span>
@@ -250,12 +260,10 @@ footer{
     </div>
   </header>
 
-  <!-- Floating CTA -->
   <a href="#" class="floating-btn">🔥 Start Now</a>
 
   <footer>
     By using, you confirm you are 18+ <br> © 2025 SexyChat Premium
   </footer>
-
 </body>
 </html>
